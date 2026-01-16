@@ -39,4 +39,3 @@ databases:
   - name: c-planning-db
     plan: free
     databaseName: c_planning_db
-    user: postgres
