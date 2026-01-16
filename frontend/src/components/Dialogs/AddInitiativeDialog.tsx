@@ -6,8 +6,8 @@ import {
   DialogActions,
   Button,
   TextField,
-  Grid,
   MenuItem,
+  Grid,
 } from '@mui/material';
 import { InitiativeCreate } from '../../types/initiative';
 import { useCreateInitiative } from '../../hooks/useInitiatives';
