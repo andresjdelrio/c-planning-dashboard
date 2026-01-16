@@ -1,0 +1,42 @@
+services:
+  # Backend API
+  - type: web
+    name: c-planning-backend
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: POSTGRES_USER
+        fromDatabase:
+          name: c-planning-db
+          property: user
+      - key: POSTGRES_PASSWORD
+        fromDatabase:
+          name: c-planning-db
+          property: password
+      - key: POSTGRES_HOST
+        fromDatabase:
+          name: c-planning-db
+          property: host
+      - key: POSTGRES_PORT
+        fromDatabase:
+          name: c-planning-db
+          property: port
+      - key: POSTGRES_DB
+        fromDatabase:
+          name: c-planning-db
+          property: database
+
+databases:
+  - name: c-planning-db
+    plan: free
+    databaseName: c_planning_db
+    user: postgres
