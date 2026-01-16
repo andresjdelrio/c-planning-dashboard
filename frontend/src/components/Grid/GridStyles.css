@@ -1,0 +1,114 @@
+/* Estilos para los bloques OP2 */
+.ag-theme-material {
+  --ag-row-border-color: transparent;
+}
+
+/* Ocultar bordes predeterminados del grid */
+.ag-theme-material .ag-row {
+  border: none !important;
+}
+
+/* Estilo para las filas que son primera del grupo OP2 */
+.ag-row-first-in-group {
+  margin-top: 16px;
+}
+
+.ag-row-first-in-group .ag-cell {
+  border-top: 1px solid #D1D5DB !important;
+}
+
+.ag-row-first-in-group .ag-cell:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+.ag-row-first-in-group .ag-cell:last-child {
+  border-top-right-radius: 12px !important;
+}
+
+/* Estilo para las filas que son última del grupo OP2 */
+.ag-row-last-in-group .ag-cell {
+  border-bottom: 1px solid #D1D5DB !important;
+}
+
+.ag-row-last-in-group .ag-cell:first-child {
+  border-bottom-left-radius: 12px !important;
+}
+
+.ag-row-last-in-group .ag-cell:last-child {
+  border-bottom-right-radius: 12px !important;
+}
+
+/* Bordes laterales para todas las celdas dentro del bloque */
+.ag-cell {
+  background-color: #FFFFFF !important;
+  border-left: 1px solid #D1D5DB !important;
+  border-right: 1px solid #D1D5DB !important;
+  border-top: none !important;
+  border-bottom: 1px solid #E5E7EB !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  line-height: 1.5 !important;
+  padding: 12px !important;
+}
+
+/* Excepción para la celda de prioridad - permitir colores personalizados */
+.ag-theme-material .ag-cell[col-id="priority"] {
+  background-color: unset !important;
+}
+
+.ag-theme-material .ag-row .ag-cell[col-id="priority"] {
+  background-color: unset !important;
+}
+
+.ag-theme-material .ag-cell.priority-cell {
+  background-color: unset !important;
+}
+
+.ag-theme-material .ag-row .ag-cell.priority-cell {
+  background-color: unset !important;
+}
+
+/* Primera celda (después del drag handle) tiene borde izquierdo */
+.ag-cell:first-child {
+  border-left: none !important;
+}
+
+/* Última celda tiene borde derecho */
+.ag-cell:last-child {
+  border-right: 1px solid #D1D5DB !important;
+}
+
+/* Celda OP2 con borde izquierdo */
+.ag-cell[col-id="op2"] {
+  border-left: 1px solid #D1D5DB !important;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Drag handle sin bordes */
+.ag-cell.drag-handle {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Celda de expansión (master-detail) sin bordes */
+.ag-cell:has(.ag-group-expanded),
+.ag-cell:has(.ag-group-contracted) {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* Estilos para las celdas OP2 merged */
+.op2-cell-first {
+  position: relative;
+  overflow: visible !important;
+}
+
+.op2-cell-middle,
+.op2-cell-last {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: 1px solid #D1D5DB !important;
+  border-right: none !important;
+}
